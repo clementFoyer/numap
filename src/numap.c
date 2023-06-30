@@ -168,6 +168,8 @@ static void get_archi(unsigned int archi_id, struct archi * arch) {
 
   case CPU_MODEL(6, 87):
     snprintf(arch->name, 256, "Knights Landing micro arch");
+    snprintf(arch->sampling_read_event, 256, "MEM_TRANS_RETIRED:LOAD_LATENCY:ldlat=3");
+    snprintf(arch->sampling_write_event, 256, "MEM_UOPS_RETIRED:ALL_STORES");
     break;
 
     // Old Intel Xeon Phi CPUs
